@@ -12,6 +12,16 @@ class Item(models.Model):
     def __str__(self):
         return self.name
     
+class TimeRecords(models.Model):
+    item = models.ForeignKey(Item, on_delete=models.CASCADE)
+    start_time = models.DateTimeField()
+    end_time = models.DateTimeField()
+    duration = models.IntegerField()
+    comment = models.TextField()
+    
+    def __str__(self):
+        return self.item.name
+    
 class CustomUser(AbstractUser):
     # Add custom fields if needed
     # For example, you can add a profile picture field:

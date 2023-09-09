@@ -65,6 +65,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'home.context_processors.user_info',  # Add the path to your context processor function here
+            
             ],
         },
     },
@@ -106,6 +108,8 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 AUTH_USER_MODEL = 'home.CustomUser'
+LOGIN_URL = 'login'  # Replace with your login view's name
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
